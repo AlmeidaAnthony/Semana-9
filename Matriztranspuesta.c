@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+// Construir un porgrama en c en donde el usuario defina las dimensiones de una matriz, 
+//el programa llena la matriz con números aleatorios entre 0 y 100 y luego calcule la matriz 
+//transpuesta. el programa debe imprimir la matriz original y la matriz transpuesta.
 
 int main() {
     int filas, columnas;
@@ -18,5 +21,22 @@ int main() {
             matriz[i][j] = rand() % 101;
         }
     }
+    // Imprimir la matriz original
+    printf("\nMatriz Original:\n");
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Calcular la matriz transpuesta
+    int transpuesta[100][100];
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            transpuesta[j][i] = matriz[i][j];
+        }
+    }
+
         return 0;
 }
